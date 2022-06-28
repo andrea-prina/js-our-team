@@ -31,4 +31,6 @@ const teamMembers = [
     }
 ]
 
-console.log(teamMembers);
+for (i=0; i < teamMembers.length; i++){
+    console.log(`Name: ${teamMembers[i].nameAndSurname}\nRole: ${teamMembers[i].role}\nImage URL: ${teamMembers[i].image}`);
+}
