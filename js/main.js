@@ -31,16 +31,14 @@ const teamMembers = [
     }
 ]
 
-// for (i=0; i < teamMembers.length; i++){
-//     console.log(`Name: ${teamMembers[i].nameAndSurname}\nRole: ${teamMembers[i].role}\nImage URL: ${teamMembers[i].image}`);
-// }
 
 const teamCardsWrapper = document.querySelector(".container");
 
 
 for (i=0; i < teamMembers.length; i++){
     const memberCard = document.createElement("div");
-    memberCard.innerHTML = `<div>${teamMembers[i].image}</div>
+    const imageSource = `./img/${teamMembers[i].image}`;
+    memberCard.innerHTML = `<img src="${imageSource}"></img>
                                 <h2>${teamMembers[i].nameAndSurname}</h2>
                                 <h5>${teamMembers[i].role}</h5>`;
     teamCardsWrapper.append(memberCard);
