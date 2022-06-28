@@ -15,3 +15,9 @@
     width: calc((100% - 1.5rem * 2 * 4) / 4);
     margin: 1.5rem;
 }
+
+.img-fit {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 3/4;
+}

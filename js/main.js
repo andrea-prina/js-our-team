@@ -47,14 +47,17 @@ const imgInput = document.getElementById("img-src");
 const submitCardBtn = document.getElementById("submit-card-button");
 
 submitCardBtn.addEventListener("click", function(){
-    console.log(nameInput.value);
-    console.log(roleInput.value);
-    console.log(imgInput.value);
+
     if(nameInput.value != "" && roleInput.value != "" && imgInput.value != ""){
         const nameInputValue = nameInput.value;
         const roleInputValue = roleInput.value;
         const imgInputValue = imgInput.value;
         createMemberCard(teamCardsWrapper, nameInputValue, roleInputValue, imgInputValue);
+
+        nameInput.value = "";
+        roleInput.value = "";
+        imgInput.value = "";
+
     }
 
 })
@@ -64,7 +67,7 @@ submitCardBtn.addEventListener("click", function(){
 function createMemberCard (parentHtmlElement, memberName, memberRole, memberImgSource){
     const memberCard = document.createElement("div");
     memberCard.classList.add("card", "ms_card-size", "text-center");
-    memberCard.innerHTML = `<img src="${memberImgSource}" class="card-img-top" alt="...">
+    memberCard.innerHTML = `<img src="${memberImgSource}" class="card-img-top img-fit" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">${memberName}</h5>
                                 <p class="card-text">${memberRole}</p>
