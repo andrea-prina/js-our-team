@@ -1,9 +1,17 @@
+:root {
+    --main-color1 : slategray;
+}
+
+.ms_bgc1 {
+    background-color: var(--main-color1);
+}
+
 .ms_container {
     width: 80%;
     margin: 0 auto;
 }
 
 .ms_card-size {
-    width: calc((100% - 1.5rem * 2 * 3) / 3);
+    width: calc((100% - 1.5rem * 2 * 4) / 4);
     margin: 1.5rem;
 }

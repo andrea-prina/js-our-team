@@ -11,11 +11,37 @@
     <title>Our team</title>
 </head>
 <body>
-    
-    <h1 class="text-center">Meet our team</h1>
-    <div class="ms_container d-flex flex-wrap">
-            <!-- Team member cards will be dynamically inserted here -->
-    </div>
+    <header class="p-1 ms_bgc1">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center text-light">Meet our team</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="ms_container d-flex flex-wrap justify-content-center">
+                        <!-- Team member cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="ms_bgc1">
+        <div class="container p-2">
+            <div class="row">
+                <div class="col-6 offset-3 d-flex flex-column align-items-center">
+                    <h5 class="text-light">"Join our team" by creating your own card</h5>
+                    <input type="text" id="name-surname" class="w-75 m-1" placeholder="Name Surname">
+                    <input type="text" id="role" class="w-75 m-1" placeholder="Role">
+                    <input type="text" id="img-src" class="w-75 m-1" placeholder="Image url">
+                    <input type="button" id="submit-card-button" value="Submit">
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="./js/main.js"></script>
 </body>
 </html>

@@ -36,18 +36,38 @@ const teamCardsWrapper = document.querySelector(".ms_container");
 
 
 for (i=0; i < teamMembers.length; i++){
-    const memberCard = document.createElement("div");
-    memberCard.classList.add("card", "ms_card-size", "text-center");
-
     const imageSource = `./img/${teamMembers[i].image}`;
-    memberCard.innerHTML = `<img src="${imageSource}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">${teamMembers[i].nameAndSurname}</h5>
-                                <p class="card-text">${teamMembers[i].role}</p>
-                            </div>`;
-    teamCardsWrapper.append(memberCard);
+    createMemberCard(teamCardsWrapper, teamMembers[i].nameAndSurname, teamMembers[i].role, imageSource)
 }
 
-// memberCard.innerHTML = `<img src="${imageSource}"></img>
-// <h2>${teamMembers[i].nameAndSurname}</h2>
-// <h5>${teamMembers[i].role}</h5>`;
+
+const nameInput = document.getElementById("name-surname");
+const roleInput = document.getElementById("role");
+const imgInput = document.getElementById("img-src");
+const submitCardBtn = document.getElementById("submit-card-button");
+
+submitCardBtn.addEventListener("click", function(){
+    console.log(nameInput.value);
+    console.log(roleInput.value);
+    console.log(imgInput.value);
+    if(nameInput.value != "" && roleInput.value != "" && imgInput.value != ""){
+        const nameInputValue = nameInput.value;
+        const roleInputValue = roleInput.value;
+        const imgInputValue = imgInput.value;
+        createMemberCard(teamCardsWrapper, nameInputValue, roleInputValue, imgInputValue);
+    }
+
+})
+
+
+
+function createMemberCard (parentHtmlElement, memberName, memberRole, memberImgSource){
+    const memberCard = document.createElement("div");
+    memberCard.classList.add("card", "ms_card-size", "text-center");
+    memberCard.innerHTML = `<img src="${memberImgSource}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${memberName}</h5>
+                                <p class="card-text">${memberRole}</p>
+                            </div>`;
+    parentHtmlElement.append(memberCard);
+}
