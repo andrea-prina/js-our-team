@@ -32,14 +32,22 @@ const teamMembers = [
 ]
 
 
-const teamCardsWrapper = document.querySelector(".container");
+const teamCardsWrapper = document.querySelector(".ms_container");
 
 
 for (i=0; i < teamMembers.length; i++){
     const memberCard = document.createElement("div");
+    memberCard.classList.add("card", "ms_card-size", "text-center");
+
     const imageSource = `./img/${teamMembers[i].image}`;
-    memberCard.innerHTML = `<img src="${imageSource}"></img>
-                                <h2>${teamMembers[i].nameAndSurname}</h2>
-                                <h5>${teamMembers[i].role}</h5>`;
+    memberCard.innerHTML = `<img src="${imageSource}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${teamMembers[i].nameAndSurname}</h5>
+                                <p class="card-text">${teamMembers[i].role}</p>
+                            </div>`;
     teamCardsWrapper.append(memberCard);
 }
+
+// memberCard.innerHTML = `<img src="${imageSource}"></img>
+// <h2>${teamMembers[i].nameAndSurname}</h2>
+// <h5>${teamMembers[i].role}</h5>`;

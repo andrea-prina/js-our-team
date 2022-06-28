@@ -1,0 +1,9 @@
+.ms_container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.ms_card-size {
+    width: calc((100% - 1.5rem * 2 * 3) / 3);
+    margin: 1.5rem;
+}
